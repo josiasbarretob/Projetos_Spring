@@ -1,0 +1,40 @@
+package com.generation.hello.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //Digitar a anotacao para depois importar o pacote.
+@RequestMapping("/") //Digitar a anotacao para depois importar o pacote.
+public class HelloController {
+	
+	@GetMapping 
+	public String hello () {
+		return "Hello, World!";
+		
+	}
+	
+	@GetMapping ("/bsm")
+	public ArrayList<String> bsm() {
+		ArrayList<String> ListaBSM = new ArrayList<>();
+		ListaBSM.add("BSM`s:");
+		ListaBSM.add("Persistência");
+		ListaBSM.add("Comunicação");
+		ListaBSM.add("Responsabilidade Pessoal");
+		ListaBSM.add("Proatividade");
+		ListaBSM.add("Trabalho em Equipe");
+		ListaBSM.add("Orientação aos Detalhes");
+		ListaBSM.add("Orientação ao Fututo");
+		ListaBSM.add("Mentalidade de Crescimento");
+		return ListaBSM;
+	}
+	
+	@GetMapping ("/objetivos")
+	public String objetivos () {
+		
+		return "<ol> <li> Dominar o Spring Boot no Java.</li> <li> Treinar mais mySQL em Banco de Dados. </li> <li> <strong> Trabalho em Equipe e Proatividade. </strong> </li> <li> Projeto Integrador.</li> <li> Codar + </li></ol>";
+	}
+	
+}
